@@ -1,6 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
 type: pipeline
-display_name: Topic Modeling
+display_name: LLM Chat
 jobs:
 #  read_data:
 #    type: command
