@@ -46,7 +46,7 @@ jobs:
   elastic:
     type: command
     code: llm
-    environment: azureml:LLM_Env
+    environment: azureml:ModelTraining
     compute: azureml:GPU-05559-01
     command: >-
       python llm.py
