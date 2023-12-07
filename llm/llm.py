@@ -26,7 +26,7 @@ from langchain.chains import ConversationalRetrievalChain
 HUGGINGFACE_TOKEN = "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"
 MODEL = "meta-llama/Llama-2-7b-chat-hf"
 account_name = 'st05559d002'
-account_key = 'lRa7z5WLpANIH2HudGel4u2Kmp5R7iCFX+LxQmb8VtNRBivxQnG18ZgoGYpxSveCtRE0Gwd9jhpV+AStBNq4uA=='
+account_key = 'XYZ'
 container_name = 'fs05559d002'
 
 file_name = ''
