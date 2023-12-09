@@ -19,6 +19,7 @@ import torch
 from transformers import StoppingCriteria, StoppingCriteriaList
 from azure.storage.blob import BlobServiceClient, ContainerClient, generate_blob_sas, BlobSasPermissions
 from datetime import datetime, timedelta
+import os
 # used to agent
 from langchain import HuggingFacePipeline
 from langchain.chains import ConversationalRetrievalChain
@@ -26,12 +27,13 @@ from langchain.chains import ConversationalRetrievalChain
 HUGGINGFACE_TOKEN = "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"
 MODEL = "meta-llama/Llama-2-7b-chat-hf"
 account_name = 'st05559d002'
-account_key = 'XYZ'
 container_name = 'fs05559d002'
 
 file_name = ''
 device = f'cuda:{cuda.current_device()}' if cuda.is_available() else 'cpu'
 login(token=HUGGINGFACE_TOKEN)
+
+account_key = os.environ.get("ACCOUNT_KEY")
 
 connect_str = 'DefaultEndpointsProtocol=https;AccountName=' + account_name + ';AccountKey=' + account_key + ';EndpointSuffix=core.windows.net'
 blob_service_client = BlobServiceClient.from_connection_string(connect_str)
