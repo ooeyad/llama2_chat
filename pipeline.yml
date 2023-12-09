@@ -47,7 +47,7 @@ jobs:
   elastic:
     type: command
     code: llm
-    environment: azureml:iyad_hf:13
+    environment: azureml:iyad_hf:16
     compute: azureml:GPU-05559-01
     command: >-
       python llm.py
