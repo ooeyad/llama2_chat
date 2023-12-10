@@ -105,22 +105,22 @@ class StopOnTokens(StoppingCriteria):
 stopping_criteria = StoppingCriteriaList([StopOnTokens()])
 
 
-pipeline = transformers.pipeline(
-    task="text-generation", #task
-    model=MODEL,
-    tokenizer=tokenizer,
-    return_full_text=True,  # langchain expects the full text
-    stopping_criteria=stopping_criteria,  # without this model rambles during chat
-    temperature=0.1,  # 'randomness' of outputs, 0.0 is the min and 1.0 the max
-    repetition_penalty=1.1,  # without this output begins repeating
-    torch_dtype=torch.bfloat16,
-    device="auto",
-    trust_remote_code=True,
-    max_length=4000,
-    do_sample=True,
-    top_k=10,
-    num_return_sequences=1,
-    eos_token_id=tokenizer.eos_token_id
-)
+# pipeline = transformers.pipeline(
+#     task="text-generation", #task
+#     model=MODEL,
+#     tokenizer=tokenizer,
+#     return_full_text=True,  # langchain expects the full text
+#     stopping_criteria=stopping_criteria,  # without this model rambles during chat
+#     temperature=0.1,  # 'randomness' of outputs, 0.0 is the min and 1.0 the max
+#     repetition_penalty=1.1,  # without this output begins repeating
+#     torch_dtype=torch.bfloat16,
+#     device="auto",
+#     trust_remote_code=True,
+#     max_length=4000,
+#     do_sample=True,
+#     top_k=10,
+#     num_return_sequences=1,
+#     eos_token_id=tokenizer.eos_token_id
+# )
 
 print("Done loaded the model!")
